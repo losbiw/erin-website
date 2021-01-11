@@ -1,0 +1,219 @@
+#home nav{
+    height: 7vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.3vw 4.7vw 0;
+    box-sizing: border-box;
+}
+
+#home #logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home #logo img{
+    height: 2.5vw;
+    margin-right: 1.05vw;
+}
+
+#home #logo h3{
+    font-weight: 600;
+    font-size: 1.75vw;
+    color: var(--dark-grey);
+    margin: 0;
+    text-shadow: var(--text-shadow);
+}
+
+#home #menu-button{
+    display: none;
+}
+
+#home ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#home ul li{
+    list-style: none;
+    margin-right: 3.7vw;
+}
+
+#home ul li a{
+    font-size: 1.45vw;
+    color: var(--grey);
+    text-shadow: var(--text-shadow);
+    transition: 300ms color;
+}
+
+#home ul li a:hover{
+    color: var(--mint);
+}
+
+#home #donation-button{
+    padding: 1.2vw 1.65vw;
+    border-radius: 2vw;
+    background-color: var(--dark-grey);
+    font-size: 1.35vw;
+    color: var(--white);
+    box-shadow: var(--text-shadow);
+    transition: 300ms background-color;
+}
+
+#home #donation-button-mobile{
+    display: none;
+}
+
+#home #donation-button:hover{
+    background-color: var(--mint);
+}
+
+#home .mockup{
+    height: calc(100vh - 7vw);
+    padding: 0 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home .mockup h1{
+    color: var(--grey);
+    font-weight: 500;
+    text-shadow: var(--filter-shadow);
+}
+
+#home #mockup_pc h1{
+    width: 50%;
+    font-size: 2.8vw;
+    line-height: 4.15vw;
+}
+
+#home #mockup_mobile{
+    display: none;
+}
+
+#home .mockup img{
+    filter: drop-shadow(var(--filter-shadow));
+}
+
+#home #mockup_pc img{
+    width: 40%;
+}
+
+#home .mockup .mint{
+    font-weight: 600;
+}
+
+@media (max-aspect-ratio: 1/1){
+    #home nav{
+        height: auto;
+        padding: 3.15vh 3.15vh 5.6vh;
+    }
+    
+    #home #logo img{
+        height: 3.9vh;
+        margin-right: 1.56vh;
+    }
+    
+    #home #logo h3{
+        font-size: 2.8vh;
+    }
+
+    #home #overlay{
+        display: none;
+    }
+
+    #home #menu-button{
+        display: block;
+        width: 2.23vh;
+        height: 1.5625vh;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+
+    #home #menu-button svg{
+        width: 100%;
+        height: 100%;
+    }
+
+    #home #menu-button:focus ~ ul,
+    #home #menu-button ~ ul:active{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #home #menu-button:focus ~ #overlay{
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: fixed;
+        z-index: 2;
+        background-color: rgba(77, 84, 94, 0.8);
+    }
+
+    #home ul{
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        display: none;
+        padding: 3.15vh;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: var(--white);
+        z-index: 3;
+    }
+
+    #home ul li{
+        margin-right: 0;
+        margin-bottom: 3vh;
+    }
+
+    #home ul li:last-child{
+        margin-bottom: 0;
+    }
+    
+    #home ul li a{
+        font-size: 2.5vh;
+    }
+    
+    #home #donation-button{
+       display: none;
+    }
+
+    #home #donation-button-mobile{
+        display: block;
+    }
+    
+    #home #mockup_mobile{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        height: 90.5vh;
+        padding: 0 0 8.4vh;
+        box-sizing: border-box;
+    }
+    #home #mockup_mobile h1{
+        display: block;
+        width: 75%;
+        font-size: 3vh;
+        line-height: 4.45vh;
+        margin-top: 5.6vh;
+        text-align: center;
+    }
+    #home #mockup_pc{
+        display: none;
+    }
+    #home #mockup_mobile img{
+        height: 80%;
+    }
+}

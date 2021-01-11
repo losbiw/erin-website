@@ -1,0 +1,117 @@
+#donation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 5vw;
+    color: var(--grey);
+}
+
+#donation #title{
+    height: 100%;
+    width: 100%;
+    padding: 0 8.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#donation #text{
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#donation img{
+    width: 50%;
+    filter: drop-shadow(var(--filter-shadow));
+}
+
+#donation #text h2{
+    font-size: 2.35vw;
+    font-weight: 500;
+    margin: 0 0 2.5vw;
+    text-shadow: var(--text-shadow);
+}
+
+#donation #text p{
+    line-height: 2.3vw;
+    letter-spacing: 0.04em;
+    font-size: 1.5vw;
+    margin: 0;
+}
+
+#donation .wallet{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#donation .wallet svg{
+    fill: var(--mint);
+    width: 3.8vw;
+    height: 3.8vw;
+    margin-right: 2.5vw;
+    filter: drop-shadow(var(--icon-shadow));
+}
+
+#donation .wallet p{
+    font-size: 1.6vw;
+    text-shadow: var(--text-shadow);
+}
+
+@media (max-aspect-ratio: 1/1){
+    #donation{
+        padding: 0 0 10vh;
+        box-sizing: border-box;
+    }
+    
+    #donation #title{
+        padding: 0 6.7vh;
+    }
+    
+    #donation #text{
+        width: 100%;
+    }
+
+    #donation img{
+        display: none;
+    }
+    
+    #donation #text h2{
+        width: 100%;
+        font-size: 3.125vh;
+        margin: 0 0 3.125vh;
+    }
+    
+    #donation #text p{
+        line-height: 3.2vh;
+        letter-spacing: 0.04em;
+        font-size: 2vh;
+        margin: 0;
+    }
+
+    #donation #cards{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 4.45vh;
+        box-sizing: border-box;
+    }
+    
+    #donation .wallet svg{
+        width: 5.25vh;
+        height: 5.25vh;
+        margin-right: 2.8vh;
+    }
+    
+    #donation .wallet p{
+        width: calc(100% - 8.05vh);
+        font-size: 1.65vh;
+        text-shadow: var(--text-shadow);
+        word-break: break-word;
+    }
+}

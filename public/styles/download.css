@@ -1,0 +1,97 @@
+#download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6vw 0 3vw;
+    box-sizing: border-box;
+}
+
+#download h2{
+    margin: 0;
+    color: var(--grey);
+    font-size: 2.65vw;
+    font-weight: 600;
+}
+
+#download p{
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 0;
+    color: var(--light-grey);
+}
+
+#download #links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#download .link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#download .link:first-child{
+    margin-right: 9vw;
+}
+
+#download .link svg{
+    fill: var(--grey);
+    width: 15vw;
+    height: 15vw;
+    margin-bottom: 3.25vw;
+    filter: drop-shadow(var(--filter-shadow));
+}
+
+#download .link:hover p{
+    background-color: var(--mint);
+    color: var(--white);
+}
+
+#download .link p{
+    border-radius: 3.5vw;
+    padding: 1.4vw 2vw;
+    color: var(--mint);
+    font-weight: 600;
+    font-size: 1.75vw;
+    transition: 400ms background-color, color;
+}
+
+@media (max-aspect-ratio: 1/1){
+    #download{
+        padding: 6.7vh 0 3.35vh;
+    }
+    
+    #download h2{
+        font-size: 3.35vh;
+    }
+    
+    #download p{
+        font-size: 1.8vh;
+    }
+    
+    #download #links{
+        flex-direction: column;
+    }
+
+    #download .link:first-child{
+        margin-right: 0;
+        margin-bottom: 5.25vh;
+    }
+    
+    #download .link svg{
+        width: 17vh;
+        height: 17vh;
+        margin-bottom: 3vh;
+    }
+    
+    #download .link p{
+        border-radius: 4.45vh;
+        padding: 1.8vh 2.45vh;
+        font-size: 2.25vh;
+    }
+}

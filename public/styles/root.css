@@ -1,0 +1,12 @@
+:root{
+    --dark-grey: #30353B;
+    --grey: #4D545E;
+    --light-grey: #D8D8D8;
+    --white: #F4F4F8;
+    --mint: #31EC9D;
+    --shadow: 3px 3px 14px 7px rgba(159, 159, 159, 0.35);
+    --text-shadow: 3px 3px 7px rgba(159, 159, 159, 0.39);
+    --icon-shadow: 3px 3px 14px rgba(159, 159, 159, 0.2);
+    --filter-shadow: 3px 3px 14px rgba(159, 159, 159, 0.35);
+    --device-shadow: 4px 4px 17px rgba(0, 0, 0, 0.2);
+}
