@@ -1,0 +1,36 @@
+body{
+    padding: 2rem;
+}
+
+section{
+    margin-bottom: 3rem;
+}
+
+h1{
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+h3{
+    font-weight: 500;
+}
+
+h3, p{
+    margin: 0.3rem 0;
+}
+
+h3, p, li{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+}
+
+li{
+    margin-bottom: 0.6rem;
+}
