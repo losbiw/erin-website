@@ -16,7 +16,7 @@ const init = (sectionClassName, linkClassName) => {
     document.addEventListener('wheel', e => handleScroll(e, scrollData));
 }
 
-const handleScroll = async(e, scrollData) => {
+const handleScroll = (e, scrollData) => {
     let { isLocked, current } = scrollData;
     const { sections, container } = scrollData;
 
@@ -36,9 +36,7 @@ const handleScroll = async(e, scrollData) => {
                 initial: sections[initial]
             }, container);
 
-            await animation.finished;
-            
-            scrollData.isLocked = false
+            animation.onfinish = () => scrollData.isLocked = false;
         }  
     }
 }
