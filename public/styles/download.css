@@ -22,10 +22,12 @@
 }
 
 #download #links{
+    padding: 0 10vw;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
 }
 
 #download .link{
@@ -35,14 +37,10 @@
     align-items: center;
 }
 
-#download .link:first-child{
-    margin-right: 9vw;
-}
-
 #download .link svg{
     fill: var(--grey);
-    width: 15vw;
-    height: 15vw;
+    width: 13vw;
+    height: 13vw;
     margin-bottom: 3.25vw;
     filter: drop-shadow(var(--filter-shadow));
 }
@@ -68,6 +66,7 @@
     
     #download h2{
         font-size: 3.35vh;
+        margin-bottom: 4vh;
     }
     
     #download p{
@@ -78,15 +77,18 @@
         flex-direction: column;
     }
 
-    #download .link:first-child{
-        margin-right: 0;
+    #download .link{
         margin-bottom: 5.25vh;
+    }
+
+    #download .link:last-of-type{
+        margin-bottom: 0;
     }
     
     #download .link svg{
-        width: 17vh;
-        height: 17vh;
-        margin-bottom: 3vh;
+        width: 13vh;
+        height: 13vh;
+        margin-bottom: 2vh;
     }
     
     #download .link p{
