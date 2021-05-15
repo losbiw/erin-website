@@ -5,39 +5,55 @@ const init = (sectionClassName, linkClassName) => {
     container.style['overflow-y'] = 'hidden';
 
     const scrollData = {
-        current: initCurrent(sections),
-        isLocked: false,
+        current: 0,
         sections,
         container
     }
 
     setupTouchEvents(scrollData);
+
     if(linkClassName) setupLinks(linkClassName, scrollData);
-    document.addEventListener('wheel', e => handleScroll(e, scrollData));
+
+    document.addEventListener('wheel', debounce(e => handleScroll(e, scrollData)));
+
+    setTimeout(() => {
+        window.scrollTo(0, 0)
+    }, 100);
+}
+
+const debounce = (func, timeout = 100) => {
+    let timer;
+
+    return (...args) => {
+        if(!timer) func.apply(this, args);
+
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            timer = undefined;
+        }, timeout);
+    };
 }
 
 const handleScroll = (e, scrollData) => {
-    let { isLocked, current } = scrollData;
+    let { current } = scrollData;
     const { sections, container } = scrollData;
 
-    if(!isLocked){
-        const initial = current;
-        const { deltaY } = e;
-    
-        if(deltaY < 0 && current - 1 >= 0) current -= 1;
-        else if(deltaY > 0 && current + 1 < sections.length) current += 1;
-    
-        if(initial !== current){
-            scrollData.isLocked = true;
-            scrollData.current = current;
-            
-            const animation = animate({
-                dest: sections[current],
-                initial: sections[initial]
-            }, container);
+    const initial = current;
+    const { deltaY } = e;
 
-            animation.onfinish = () => scrollData.isLocked = false;
-        }  
+    if(deltaY < 0 && current - 1 >= 0) current -= 1;
+    else if(deltaY > 0 && current + 1 < sections.length) current += 1;
+
+    if(initial !== current){
+        scrollData.current = current;
+        
+        animate({
+            dest: sections[current],
+            initial: sections[initial]
+        }, container);
+
+        sections[0].focus();
     }
 }
 
@@ -59,17 +75,6 @@ const setupTouchEvents = scrollData => {
             handleScroll({ deltaY: directionDelta }, scrollData);
         }
     });
-}
-
-const initCurrent = elements => {
-    for(const index in elements){
-        const { offsetTop, scrollHeight } = elements[index];
-        const { scrollY } = window;
-
-        if(offsetTop <= scrollY && scrollHeight + offsetTop > scrollY){
-            return parseInt(index)
-        }
-    }
 }
 
 const setupLinks = (className, scrollData) => {
